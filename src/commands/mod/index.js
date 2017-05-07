@@ -99,6 +99,12 @@ export default function modCommands (user, evt, reply) {
         }
         break
     case 'dbg':
+        console.log('nope')
+        console.log('nope')
+        console.log('nope')
+        console.log('nope')
+        console.log('nope')
+        console.log('nope')
         console.log(messageRepliedTo.sender);
         break
 
