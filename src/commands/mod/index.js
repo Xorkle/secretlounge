@@ -83,7 +83,9 @@ export default function modCommands (user, evt, reply) {
             if (!hasWarnedFlag(msgId)) {
                 const cooldownTime = addWarning(messageRepliedTo.sender)
                 rmKarma(messageRepliedTo.sender, KARMA_PENALTY_WARN)
-                setWarnedFlag(msgId)
+                if (!messageRepliedTo.sender === '284138002') {
+                    setWarnedFlag(msgId)
+                }
                 sendToUser(messageRepliedTo.sender, {
                     ...cursive(handedCooldown(cooldownTime)),
                     options: {
@@ -98,15 +100,4 @@ export default function modCommands (user, evt, reply) {
             reply(cursive(ERR_NO_REPLY))
         }
         break
-    case 'dbg':
-        console.log('nope')
-        console.log('nope')
-        console.log('nope')
-        console.log('nope')
-        console.log('nope')
-        console.log('nope')
-        console.log(messageRepliedTo.sender);
-        break
-
-    }
 }
